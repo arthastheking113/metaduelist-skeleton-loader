@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- No Cache -->
+    <!-- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" /> -->
+    <!-- END No Cache -->
+
+    <title>YuGi-Oh! Simulator</title>
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+
+    <meta property="og:title" content="YuGi-Oh! Simulator">
+    <meta property="og:description" content="A simple YuGi-Oh! Simulator using plain HTML, CSS, and jQuery/Javascript">
+    <meta property="og:url" content="https://simulator.metaduelist.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:image:secure_url"
+        content="https://ygovietnamcdn.azureedge.net/storage/Assets/defaultImage-compressed.jpg">
+    <meta property="og:image" content="https://ygovietnamcdn.azureedge.net/storage/Assets/defaultImage-compressed.jpg">
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="800">
+    <meta property="og:image:alt" content="YuGi-Oh! Simulator">
+    <meta property="og:site_name" content="YuGi-Oh! Simulator">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="YuGi-Oh! Simulator">
+    <meta name="twitter:title" content="YuGi-Oh! Simulator">
+    <meta name="twitter:description" content="A simple YuGi-Oh! Simulator using plain HTML, CSS, and jQuery/Javascript">
+    <meta name="twitter:image" content="https://ygovietnamcdn.azureedge.net/storage/Assets/defaultImage-compressed.jpg">
+    <meta name="twitter:image:alt" content="YuGi-Oh! Simulator Logo">
+
+    <meta name="author" content="https://metaduelist.com/">
+    <meta name="copyright" lang="@Language" content="YuGi-Oh! Simulator">
+    <meta name="apple-mobile-web-app-title" content="YuGi-Oh! Simulator">
+    <meta name="application-name" content="YuGi-Oh! Simulator">
+    <meta name="description" content="A simple YuGi-Oh! Simulator using plain HTML, CSS, and jQuery/Javascript" />
+    <meta name="keywords" content="yugioh, simulator, html template, simple" />
+    <meta name="canonical" content="https://simulator.metaduelist.com/" />
+    <link href="favicon.png" rel="icon" integrity="">
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+        rel="stylesheet" integrity="" data-noprefix>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/fontawesome.css?v=5.10.0" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/jquery-ui.min.css?v=1.12.1" />
+    <link rel="stylesheet" media="screen" href="css/theme.min.css?v=1.4" integrity="">
+    <script src="js/iconify.min.js?v=1.0.7" integrity=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" integrity=""></script>
+    <link rel="stylesheet" href="css/theme.css?v=1.5" integrity="" />
+    <link rel="stylesheet" href="css/tournamentStyle.css?v=1.4" integrity="" />
+    <link rel="stylesheet" href="css/app.css" integrity="" />
+    <link rel="stylesheet" href="css/simulator.css?v=1.0.8" integrity="" />
+    <script src="js/jquery.min.js?v=3.2.1"></script>
+    <script src="js/jquery-ui.min.js?v=1.12.1"></script>
+    <script src="js/jquery.ui.touch-punch.min.js?v=0.2.3"></script>
+</head>
+
+<body>
+
+    <div class="container mt-4" style="border-bottom: white 1px solid;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Tierlist Page</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mb-2 p-0">
+        <div class="row">
+            <div class="col-lg-2 d-none d-lg-block">
+                <div style="position: relative;width: 100%;top: 10%;"><!--!-->
+                    <div></div>
+                </div>
+            </div>
+            <div class="col-lg-8 p-0">
+
+
+                <br>
+                <br>
+                <div class="container mb-5 pb-3">
+                    <div class="row">
+                        <div class="col text-center" itemscope="">
+                            <h1 style="font-size: x-large;text-transform: uppercase;" itemprop="title" tabindex="-1">
+                                Master Duel Tierlist</h1>
+                        </div>
+                    </div><!--!-->
+                    <div class="row mt-2">
+                        <div class="col" itemscope="">
+                            <div class="tier-tab-frame"><!--!--><input type="radio" checked="" name="tier-tab"
+                                    id="tier-tab1">
+                                <label for="tier-tab1">Tierlist</label><!--!-->
+
+                                <div class="tier-tab">
+                                    <div class="row mt-1 mb-3">
+                                        <div class="col">
+                                            <article itemscope="">
+                                                <div class="row">
+                                                    <div class="col-sm-3 col-md-3 col-lg-2 col-5 text-center">
+                                                        <div class="card" style="border:0;">
+                                                            <div class="card-body p-0"
+                                                                style="background-color: #011d38"><img class="img-fluid"
+                                                                    src="https://ygovietnamcdn.azureedge.net/storage/Assets/tier/1.webp"
+                                                                    alt="Tier 1" loading="lazy"></div>
+                                                        </div>
+                                                    </div>
+                                                </div><!--!-->
+                                                <p class="d-none d-sm-block"
+                                                    style="margin-top: 5px;margin-bottom: 0px;font-size: small;"
+                                                    itemprop="title">Good at going first and second. High stability.
+                                                    High coordination ability. *</p><!--!-->
+                                                <p class="d-block d-sm-none"
+                                                    style="margin-top: 5px;margin-bottom: 0px;font-size: x-small;"
+                                                    itemprop="title">Good at going first and second. High stability.
+                                                    High coordination ability. *</p><!--!-->
+
+                                                <div class="row">
+                                                    <div class="col px-sm-4">
+                                                        <div class="row">
+                                                            <div class="col-xl-3 col-lg-4 col-md-3 col-6 px-2 mt-2"><a
+                                                                    href="/gameplay/master-duel/breakdown/Fire King">
+                                                                    <div class="card zoom"
+                                                                        style="border-radius:5px;padding:0;border:none">
+                                                                        <img src="https://ygovietnamcdn.azureedge.net/storage/Assets/new-red.png"
+                                                                            style="z-index: 10; position: absolute; width: 3rem; right: -12px; top: -10px;">
+                                                                        <div class="card-body neon-light-effect"
+                                                                            style="background-color: #b2bfe5;padding: 0;border-radius: 10px;border: 3px solid #4a4550;">
+                                                                            <div class="shining-img">
+                                                                                <!--!--><span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-3 col-4 text-center px-sm-2 px-0"
+                                                                                        style="padding-left: 10px !important;">
+                                                                                        <div
+                                                                                            class="row mt-sm-0 justify-content-center">
+                                                                                            <div
+                                                                                                class="col-12 text-center">
+                                                                                                <img class="img-fluid"
+                                                                                                    style="border-radius:10%;z-index: 1;width: 100%;"
+                                                                                                    src="https://ygovietnamcdn.azureedge.net/storage/Archetype/Fire%20King08-26-2022-04-57-12.webp"
+                                                                                                    alt="Fire King"
+                                                                                                    loading="lazy">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div><!--!-->
+                                                                                    <div
+                                                                                        class="col-lg-9 col-8 px-sm-2 px-0 text-center d-flex align-items-center justify-content-center">
+                                                                                        <p class="tierlist-text"
+                                                                                            itemprop="title"
+                                                                                            style="font-size: small;margin: 0;">
+                                                                                            Fire King</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-xl-3 col-lg-4 col-md-3 col-6 px-2 mt-2"><a
+                                                                    href="/gameplay/master-duel/breakdown/Snake-Eye">
+                                                                    <div class="card zoom"
+                                                                        style="border-radius:5px;padding:0;border:none">
+                                                                        <img src="https://ygovietnamcdn.azureedge.net/storage/Assets/new-red.png"
+                                                                            style="z-index: 10; position: absolute; width: 3rem; right: -12px; top: -10px;">
+                                                                        <div class="card-body neon-light-effect"
+                                                                            style="background-color: #b2bfe5;padding: 0;border-radius: 10px;border: 3px solid #4a4550;">
+                                                                            <div class="shining-img">
+                                                                                <!--!--><span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-3 col-4 text-center px-sm-2 px-0"
+                                                                                        style="padding-left: 10px !important;">
+                                                                                        <div
+                                                                                            class="row mt-sm-0 justify-content-center">
+                                                                                            <div
+                                                                                                class="col-12 text-center">
+                                                                                                <img class="img-fluid"
+                                                                                                    style="border-radius:10%;z-index: 1;width: 100%;"
+                                                                                                    src="https://ygovietnamcdn.azureedge.net/storage/Archetype/Snake-Eye02-10-2024-23-59-21.jpeg"
+                                                                                                    alt="Snake-Eye"
+                                                                                                    loading="lazy">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div><!--!-->
+                                                                                    <div
+                                                                                        class="col-lg-9 col-8 px-sm-2 px-0 text-center d-flex align-items-center justify-content-center">
+                                                                                        <p class="tierlist-text"
+                                                                                            itemprop="title"
+                                                                                            style="font-size: small;margin: 0;">
+                                                                                            Snake-Eye</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div><!--!-->
+                                    <hr>
+                                    <div class="row mt-1 mb-3">
+                                        <div class="col">
+                                            <article itemscope="">
+                                                <div class="row">
+                                                    <div class="col-sm-3 col-md-3 col-lg-2 col-5 text-center">
+                                                        <div class="card" style="border:0;">
+                                                            <div class="card-body p-0"
+                                                                style="background-color: #011d38"><img class="img-fluid"
+                                                                    src="https://ygovietnamcdn.azureedge.net/storage/Assets/tier/2.webp"
+                                                                    alt="Tier 2" loading="lazy"></div>
+                                                        </div>
+                                                    </div>
+                                                </div><!--!-->
+                                                <p class="d-none d-sm-block"
+                                                    style="margin-top: 5px;margin-bottom: 0px;font-size: small;"
+                                                    itemprop="title">Good at going first or second. Good stability.
+                                                    Limited coordination capabilities.*</p><!--!-->
+                                                <p class="d-block d-sm-none"
+                                                    style="margin-top: 5px;margin-bottom: 0px;font-size: x-small;"
+                                                    itemprop="title">Good at going first or second. Good stability.
+                                                    Limited coordination capabilities.*</p><!--!-->
+
+                                                <div class="row">
+                                                    <div class="col px-sm-4">
+                                                        <div class="row">
+                                                            <div class="col-xl-3 col-lg-4 col-md-3 col-6 px-2 mt-2"><a
+                                                                    href="/gameplay/master-duel/breakdown/Branded">
+                                                                    <div class="card zoom"
+                                                                        style="border-radius:5px;padding:0;border:none">
+                                                                        <img src="https://ygovietnamcdn.azureedge.net/storage/Assets/new-red.png"
+                                                                            style="z-index: 10; position: absolute; width: 3rem; right: -12px; top: -10px;">
+                                                                        <div class="card-body neon-light-effect"
+                                                                            style="background-color: #b2bfe5;padding: 0;border-radius: 10px;border: 3px solid #4a4550;">
+                                                                            <div class="shining-img">
+                                                                                <!--!--><span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-3 col-4 text-center px-sm-2 px-0"
+                                                                                        style="padding-left: 10px !important;">
+                                                                                        <div
+                                                                                            class="row mt-sm-0 justify-content-center">
+                                                                                            <div
+                                                                                                class="col-12 text-center">
+                                                                                                <img class="img-fluid"
+                                                                                                    style="border-radius:10%;z-index: 1;width: 100%;"
+                                                                                                    src="https://ygovietnamcdn.azureedge.net/storage/Archetype/Branded09-09-2022-04-55-22.png"
+                                                                                                    alt="Branded"
+                                                                                                    loading="lazy">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div><!--!-->
+                                                                                    <div
+                                                                                        class="col-lg-9 col-8 px-sm-2 px-0 text-center d-flex align-items-center justify-content-center">
+                                                                                        <p class="tierlist-text"
+                                                                                            itemprop="title"
+                                                                                            style="font-size: small;margin: 0;">
+                                                                                            Branded</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-xl-3 col-lg-4 col-md-3 col-6 px-2 mt-2"><a
+                                                                    href="/gameplay/master-duel/breakdown/Rescue-ACE">
+                                                                    <div class="card zoom"
+                                                                        style="border-radius:5px;padding:0;border:none">
+                                                                        <img src="https://ygovietnamcdn.azureedge.net/storage/Assets/new-red.png"
+                                                                            style="z-index: 10; position: absolute; width: 3rem; right: -12px; top: -10px;">
+                                                                        <div class="card-body neon-light-effect"
+                                                                            style="background-color: #b2bfe5;padding: 0;border-radius: 10px;border: 3px solid #4a4550;">
+                                                                            <div class="shining-img">
+                                                                                <!--!--><span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-3 col-4 text-center px-sm-2 px-0"
+                                                                                        style="padding-left: 10px !important;">
+                                                                                        <div
+                                                                                            class="row mt-sm-0 justify-content-center">
+                                                                                            <div
+                                                                                                class="col-12 text-center">
+                                                                                                <img class="img-fluid"
+                                                                                                    style="border-radius:10%;z-index: 1;width: 100%;"
+                                                                                                    src="https://ygovietnamcdn.azureedge.net/storage/Archetype/Rescue-ACE10-28-2023-16-53-34.png"
+                                                                                                    alt="Rescue-ACE"
+                                                                                                    loading="lazy">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div><!--!-->
+                                                                                    <div
+                                                                                        class="col-lg-9 col-8 px-sm-2 px-0 text-center d-flex align-items-center justify-content-center">
+                                                                                        <p class="tierlist-text"
+                                                                                            itemprop="title"
+                                                                                            style="font-size: small;margin: 0;">
+                                                                                            Rescue-ACE</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-xl-3 col-lg-4 col-md-3 col-6 px-2 mt-2"><a
+                                                                    href="/gameplay/master-duel/breakdown/Yubel">
+                                                                    <div class="card zoom"
+                                                                        style="border-radius:5px;padding:0;border:none">
+                                                                        <img src="https://ygovietnamcdn.azureedge.net/storage/Assets/new-red.png"
+                                                                            style="z-index: 10; position: absolute; width: 3rem; right: -12px; top: -10px;">
+                                                                        <div class="card-body neon-light-effect"
+                                                                            style="background-color: #b2bfe5;padding: 0;border-radius: 10px;border: 3px solid #4a4550;">
+                                                                            <div class="shining-img">
+                                                                                <!--!--><span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-3 col-4 text-center px-sm-2 px-0"
+                                                                                        style="padding-left: 10px !important;">
+                                                                                        <div
+                                                                                            class="row mt-sm-0 justify-content-center">
+                                                                                            <div
+                                                                                                class="col-12 text-center">
+                                                                                                <img class="img-fluid"
+                                                                                                    style="border-radius:10%;z-index: 1;width: 100%;"
+                                                                                                    src="https://ygovietnamcdn.azureedge.net/storage/Archetype/Yubel07-14-2024-05-09-37.webp"
+                                                                                                    alt="Yubel"
+                                                                                                    loading="lazy">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div><!--!-->
+                                                                                    <div
+                                                                                        class="col-lg-9 col-8 px-sm-2 px-0 text-center d-flex align-items-center justify-content-center">
+                                                                                        <p class="tierlist-text"
+                                                                                            itemprop="title"
+                                                                                            style="font-size: small;margin: 0;">
+                                                                                            Yubel</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div><!--!-->
+                                    <hr>
+                                    <div class="row mt-1 mb-3">
+                                        <div class="col">
+                                            <article itemscope="">
+                                                <div class="row">
+                                                    <div class="col-sm-3 col-md-3 col-lg-2 col-5 text-center">
+                                                        <div class="card" style="border:0;">
+                                                            <div class="card-body p-0"
+                                                                style="background-color: #011d38"><img class="img-fluid"
+                                                                    src="https://ygovietnamcdn.azureedge.net/storage/Assets/tier/3.webp"
+                                                                    alt="Tier 3" loading="lazy"></div>
+                                                        </div>
+                                                    </div>
+                                                </div><!--!-->
+                                                <p class="d-none d-sm-block"
+                                                    style="margin-top: 5px;margin-bottom: 0px;font-size: small;"
+                                                    itemprop="title">Only have advantage when going the right turn.
+                                                    Moderate stability. Limited coordination capabilities.*</p><!--!-->
+                                                <p class="d-block d-sm-none"
+                                                    style="margin-top: 5px;margin-bottom: 0px;font-size: x-small;"
+                                                    itemprop="title">Only have advantage when going the right turn.
+                                                    Moderate stability. Limited coordination capabilities.*</p><!--!-->
+
+                                                <div class="row">
+                                                    <div class="col px-sm-4">
+                                                        <div class="row">
+                                                            <div class="col-xl-3 col-lg-4 col-md-3 col-6 px-2 mt-2"><a
+                                                                    href="/gameplay/master-duel/breakdown/Labrynth">
+                                                                    <div class="card zoom"
+                                                                        style="border-radius:5px;padding:0;border:none">
+                                                                        <img src="https://ygovietnamcdn.azureedge.net/storage/Assets/new-red.png"
+                                                                            style="z-index: 10; position: absolute; width: 3rem; right: -12px; top: -10px;">
+                                                                        <div class="card-body neon-light-effect"
+                                                                            style="background-color: #b2bfe5;padding: 0;border-radius: 10px;border: 3px solid #4a4550;">
+                                                                            <div class="shining-img">
+                                                                                <!--!--><span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-3 col-4 text-center px-sm-2 px-0"
+                                                                                        style="padding-left: 10px !important;">
+                                                                                        <div
+                                                                                            class="row mt-sm-0 justify-content-center">
+                                                                                            <div
+                                                                                                class="col-12 text-center">
+                                                                                                <img class="img-fluid"
+                                                                                                    style="border-radius:10%;z-index: 1;width: 100%;"
+                                                                                                    src="https://ygovietnamcdn.azureedge.net/storage/Archetype/Labrynth10-09-2022-14-20-22.png"
+                                                                                                    alt="Labrynth"
+                                                                                                    loading="lazy">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div><!--!-->
+                                                                                    <div
+                                                                                        class="col-lg-9 col-8 px-sm-2 px-0 text-center d-flex align-items-center justify-content-center">
+                                                                                        <p class="tierlist-text"
+                                                                                            itemprop="title"
+                                                                                            style="font-size: small;margin: 0;">
+                                                                                            Labrynth</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-xl-3 col-lg-4 col-md-3 col-6 px-2 mt-2"><a
+                                                                    href="/gameplay/master-duel/breakdown/Purrely">
+                                                                    <div class="card zoom"
+                                                                        style="border-radius:5px;padding:0;border:none">
+                                                                        <div class="card-body neon-light-effect"
+                                                                            style="background-color: #b2bfe5;padding: 0;border-radius: 10px;border: 3px solid #4a4550;">
+                                                                            <div class="shining-img">
+                                                                                <!--!--><span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-3 col-4 text-center px-sm-2 px-0"
+                                                                                        style="padding-left: 10px !important;">
+                                                                                        <div
+                                                                                            class="row mt-sm-0 justify-content-center">
+                                                                                            <div
+                                                                                                class="col-12 text-center">
+                                                                                                <img class="img-fluid"
+                                                                                                    style="border-radius:10%;z-index: 1;width: 100%;"
+                                                                                                    src="https://ygovietnamcdn.azureedge.net/storage/Archetype/Purrely09-09-2023-12-25-39.png"
+                                                                                                    alt="Purrely"
+                                                                                                    loading="lazy">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div><!--!-->
+                                                                                    <div
+                                                                                        class="col-lg-9 col-8 px-sm-2 px-0 text-center d-flex align-items-center justify-content-center">
+                                                                                        <p class="tierlist-text"
+                                                                                            itemprop="title"
+                                                                                            style="font-size: small;margin: 0;">
+                                                                                            Purrely</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-xl-3 col-lg-4 col-md-3 col-6 px-2 mt-2"><a
+                                                                    href="/gameplay/master-duel/breakdown/Tearlaments">
+                                                                    <div class="card zoom"
+                                                                        style="border-radius:5px;padding:0;border:none">
+                                                                        <img src="https://ygovietnamcdn.azureedge.net/storage/Assets/new-red.png"
+                                                                            style="z-index: 10; position: absolute; width: 3rem; right: -12px; top: -10px;">
+                                                                        <div class="card-body neon-light-effect"
+                                                                            style="background-color: #b2bfe5;padding: 0;border-radius: 10px;border: 3px solid #4a4550;">
+                                                                            <div class="shining-img">
+                                                                                <!--!--><span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-3 col-4 text-center px-sm-2 px-0"
+                                                                                        style="padding-left: 10px !important;">
+                                                                                        <div
+                                                                                            class="row mt-sm-0 justify-content-center">
+                                                                                            <div
+                                                                                                class="col-12 text-center">
+                                                                                                <img class="img-fluid"
+                                                                                                    style="border-radius:10%;z-index: 1;width: 100%;"
+                                                                                                    src="https://ygovietnamcdn.azureedge.net/storage/Archetype/Tearlaments01-13-2023-15-43-23.png"
+                                                                                                    alt="Tearlaments"
+                                                                                                    loading="lazy">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div><!--!-->
+                                                                                    <div
+                                                                                        class="col-lg-9 col-8 px-sm-2 px-0 text-center d-flex align-items-center justify-content-center">
+                                                                                        <p class="tierlist-text"
+                                                                                            itemprop="title"
+                                                                                            style="font-size: small;margin: 0;">
+                                                                                            Tearlaments</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div><!--!-->
+                                    <hr>
+                                    <div class="row mt-1 mb-3">
+                                        <div class="col">
+                                            <article itemscope="">
+                                                <div class="row">
+                                                    <div class="col-sm-3 col-md-3 col-lg-2 col-5 text-center">
+                                                        <div class="card" style="border:0;">
+                                                            <div class="card-body p-0"
+                                                                style="background-color: #011d38"><img class="img-fluid"
+                                                                    src="https://ygovietnamcdn.azureedge.net/storage/Assets/tier/4.webp"
+                                                                    alt="High Potential" loading="lazy"></div>
+                                                        </div>
+                                                    </div>
+                                                </div><!--!-->
+                                                <p class="d-none d-sm-block"
+                                                    style="margin-top: 5px;margin-bottom: 0px;font-size: small;"
+                                                    itemprop="title">Archetypes are recognized by many top players as
+                                                    having Leaderboard potential and need to be further explored. If no
+                                                    good results are established, it is not recommended to invest in
+                                                    these Archetypes.*</p><!--!-->
+                                                <p class="d-block d-sm-none"
+                                                    style="margin-top: 5px;margin-bottom: 0px;font-size: x-small;"
+                                                    itemprop="title">Archetypes are recognized by many top players as
+                                                    having Leaderboard potential and need to be further explored. If no
+                                                    good results are established, it is not recommended to invest in
+                                                    these Archetypes.*</p><!--!-->
+
+                                                <div class="row">
+                                                    <div class="col px-sm-4">
+                                                        <div class="row">
+                                                            <div class="col-xl-3 col-lg-4 col-md-3 col-6 px-2 mt-2"><a
+                                                                    href="/gameplay/master-duel/breakdown/Mathmech">
+                                                                    <div class="card zoom"
+                                                                        style="border-radius:5px;padding:0;border:none">
+                                                                        <img src="https://ygovietnamcdn.azureedge.net/storage/Assets/new-red.png"
+                                                                            style="z-index: 10; position: absolute; width: 3rem; right: -12px; top: -10px;">
+                                                                        <div class="card-body neon-light-effect"
+                                                                            style="background-color: #b2bfe5;padding: 0;border-radius: 10px;border: 3px solid #4a4550;">
+                                                                            <div class="shining-img">
+                                                                                <!--!--><span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-3 col-4 text-center px-sm-2 px-0"
+                                                                                        style="padding-left: 10px !important;">
+                                                                                        <div
+                                                                                            class="row mt-sm-0 justify-content-center">
+                                                                                            <div
+                                                                                                class="col-12 text-center">
+                                                                                                <img class="img-fluid"
+                                                                                                    style="border-radius:10%;z-index: 1;width: 100%;"
+                                                                                                    src="https://ygovietnamcdn.azureedge.net/storage/Archetype/Mathmech01-30-2022-00-18-50.webp"
+                                                                                                    alt="Mathmech"
+                                                                                                    loading="lazy">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div><!--!-->
+                                                                                    <div
+                                                                                        class="col-lg-9 col-8 px-sm-2 px-0 text-center d-flex align-items-center justify-content-center">
+                                                                                        <p class="tierlist-text"
+                                                                                            itemprop="title"
+                                                                                            style="font-size: small;margin: 0;">
+                                                                                            Mathmech</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-xl-3 col-lg-4 col-md-3 col-6 px-2 mt-2"><a
+                                                                    href="/gameplay/master-duel/breakdown/Rikka">
+                                                                    <div class="card zoom"
+                                                                        style="border-radius:5px;padding:0;border:none">
+                                                                        <img src="https://ygovietnamcdn.azureedge.net/storage/Assets/new-red.png"
+                                                                            style="z-index: 10; position: absolute; width: 3rem; right: -12px; top: -10px;">
+                                                                        <div class="card-body neon-light-effect"
+                                                                            style="background-color: #b2bfe5;padding: 0;border-radius: 10px;border: 3px solid #4a4550;">
+                                                                            <div class="shining-img">
+                                                                                <!--!--><span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-3 col-4 text-center px-sm-2 px-0"
+                                                                                        style="padding-left: 10px !important;">
+                                                                                        <div
+                                                                                            class="row mt-sm-0 justify-content-center">
+                                                                                            <div
+                                                                                                class="col-12 text-center">
+                                                                                                <img class="img-fluid"
+                                                                                                    style="border-radius:10%;z-index: 1;width: 100%;"
+                                                                                                    src="https://ygovietnamcdn.azureedge.net/storage/Archetype/Rikka04-03-2022-05-03-52.webp"
+                                                                                                    alt="Rikka"
+                                                                                                    loading="lazy">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div><!--!-->
+                                                                                    <div
+                                                                                        class="col-lg-9 col-8 px-sm-2 px-0 text-center d-flex align-items-center justify-content-center">
+                                                                                        <p class="tierlist-text"
+                                                                                            itemprop="title"
+                                                                                            style="font-size: small;margin: 0;">
+                                                                                            Rikka</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-xl-3 col-lg-4 col-md-3 col-6 px-2 mt-2"><a
+                                                                    href="/gameplay/master-duel/breakdown/Salamangreat">
+                                                                    <div class="card zoom"
+                                                                        style="border-radius:5px;padding:0;border:none">
+                                                                        <div class="card-body neon-light-effect"
+                                                                            style="background-color: #b2bfe5;padding: 0;border-radius: 10px;border: 3px solid #4a4550;">
+                                                                            <div class="shining-img">
+                                                                                <!--!--><span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-3 col-4 text-center px-sm-2 px-0"
+                                                                                        style="padding-left: 10px !important;">
+                                                                                        <div
+                                                                                            class="row mt-sm-0 justify-content-center">
+                                                                                            <div
+                                                                                                class="col-12 text-center">
+                                                                                                <img class="img-fluid"
+                                                                                                    style="border-radius:10%;z-index: 1;width: 100%;"
+                                                                                                    src="https://ygovietnamcdn.azureedge.net/storage/Archetype/Salamangreat01-07-2022-03-18-14.png"
+                                                                                                    alt="Salamangreat"
+                                                                                                    loading="lazy">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div><!--!-->
+                                                                                    <div
+                                                                                        class="col-lg-9 col-8 px-sm-2 px-0 text-center d-flex align-items-center justify-content-center">
+                                                                                        <p class="tierlist-text"
+                                                                                            itemprop="title"
+                                                                                            style="font-size: small;margin: 0;">
+                                                                                            Salamangreat</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-xl-3 col-lg-4 col-md-3 col-6 px-2 mt-2"><a
+                                                                    href="/gameplay/master-duel/breakdown/SPYRAL">
+                                                                    <div class="card zoom"
+                                                                        style="border-radius:5px;padding:0;border:none">
+                                                                        <div class="card-body neon-light-effect"
+                                                                            style="background-color: #b2bfe5;padding: 0;border-radius: 10px;border: 3px solid #4a4550;">
+                                                                            <div class="shining-img">
+                                                                                <!--!--><span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <span></span>
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-3 col-4 text-center px-sm-2 px-0"
+                                                                                        style="padding-left: 10px !important;">
+                                                                                        <div
+                                                                                            class="row mt-sm-0 justify-content-center">
+                                                                                            <div
+                                                                                                class="col-12 text-center">
+                                                                                                <img class="img-fluid"
+                                                                                                    style="border-radius:10%;z-index: 1;width: 100%;"
+                                                                                                    src="https://ygovietnamcdn.azureedge.net/storage/Archetype/Spiral01-23-2022-04-12-25.webp"
+                                                                                                    alt="SPYRAL"
+                                                                                                    loading="lazy">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div><!--!-->
+                                                                                    <div
+                                                                                        class="col-lg-9 col-8 px-sm-2 px-0 text-center d-flex align-items-center justify-content-center">
+                                                                                        <p class="tierlist-text"
+                                                                                            itemprop="title"
+                                                                                            style="font-size: small;margin: 0;">
+                                                                                            SPYRAL</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div><!--!-->
+                                    <hr>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 d-none d-lg-block">
+                <div style="position: relative;width: 100%;top: 10%;text-align: right;"><!--!-->
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-4" style="border-top: white 1px solid;">
+        <div class="row">
+            <div class="col-12 text-center">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5 mb-5 pt-5 pb-5">
+        <div class="row mt-5 mb-5 pt-5 pb-5 justify-content-center">
+            <div class="col-12">
+                <br>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="js/card_menu.js?v=1.0.8" integrity=""></script>
+    <script src="js/simulator.js?v=1.0.8" integrity=""></script>
+    <script src="js/main.js?v=1.0.8" integrity=""></script>
+    <script src="js/Function.js?v=1.6" integrity=""></script>
+
+    <!-- <script src="https://code.iconify.design/2/2.0.3/iconify.min.js" integrity=""></script> -->
+    <!-- Main theme script-->
+    <script src="js/theme.js" integrity=""></script>
+
+    <script src="js/removeBackDrop.js" integrity=""></script>
+    <link rel="stylesheet" href="css/animate.min.css?v=4.1.1" integrity="" />
+
+
+</body>
+
+</html>
