@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- No Cache -->
+    <!-- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" /> -->
+    <!-- END No Cache -->
+
+    <title>YuGi-Oh! Simulator</title>
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+
+    <meta property="og:title" content="YuGi-Oh! Simulator">
+    <meta property="og:description" content="A simple YuGi-Oh! Simulator using plain HTML, CSS, and jQuery/Javascript">
+    <meta property="og:url" content="https://simulator.metaduelist.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:image:secure_url"
+        content="https://ygovietnamcdn.azureedge.net/storage/Assets/defaultImage-compressed.jpg">
+    <meta property="og:image" content="https://ygovietnamcdn.azureedge.net/storage/Assets/defaultImage-compressed.jpg">
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="800">
+    <meta property="og:image:alt" content="YuGi-Oh! Simulator">
+    <meta property="og:site_name" content="YuGi-Oh! Simulator">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="YuGi-Oh! Simulator">
+    <meta name="twitter:title" content="YuGi-Oh! Simulator">
+    <meta name="twitter:description" content="A simple YuGi-Oh! Simulator using plain HTML, CSS, and jQuery/Javascript">
+    <meta name="twitter:image" content="https://ygovietnamcdn.azureedge.net/storage/Assets/defaultImage-compressed.jpg">
+    <meta name="twitter:image:alt" content="YuGi-Oh! Simulator Logo">
+
+    <meta name="author" content="https://metaduelist.com/">
+    <meta name="copyright" lang="@Language" content="YuGi-Oh! Simulator">
+    <meta name="apple-mobile-web-app-title" content="YuGi-Oh! Simulator">
+    <meta name="application-name" content="YuGi-Oh! Simulator">
+    <meta name="description" content="A simple YuGi-Oh! Simulator using plain HTML, CSS, and jQuery/Javascript" />
+    <meta name="keywords" content="yugioh, simulator, html template, simple" />
+    <meta name="canonical" content="https://simulator.metaduelist.com/" />
+    <link href="favicon.png" rel="icon" integrity="">
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+        rel="stylesheet" integrity="" data-noprefix>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/fontawesome.css?v=5.10.0" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/jquery-ui.min.css?v=1.12.1" />
+    <link rel="stylesheet" media="screen" href="css/theme.min.css?v=1.4" integrity="">
+    <script src="js/iconify.min.js?v=1.0.7" integrity=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" integrity=""></script>
+    <link rel="stylesheet" href="css/theme.css?v=1.5" integrity="" />
+    <link rel="stylesheet" href="css/tournamentStyle.css?v=1.4" integrity="" />
+    <link rel="stylesheet" href="css/app.css" integrity="" />
+    <link rel="stylesheet" href="css/simulator.css?v=1.0.8" integrity="" />
+    <link rel="stylesheet" href="css/skeleton.css?v=1.0.0" integrity="" />
+    <script src="js/jquery.min.js?v=3.2.1"></script>
+    <script src="js/jquery-ui.min.js?v=1.12.1"></script>
+    <script src="js/jquery.ui.touch-punch.min.js?v=0.2.3"></script>
+</head>
+
+<body>
+
+    <!-- ============================1. Tierlist skeleton here=====================================-->
+    <div class="container mt-4" style="border-top: white 1px solid;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>1. Tierlist</h1>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5 pb-3">
+        <div class="row">
+            <div class="col text-center" itemscope="">
+                <h1 style="font-size: x-large;text-transform: uppercase;" itemprop="title" tabindex="-1">
+                    Master Duel Tierlist</h1>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col" itemscope="">
+                <div class="tier-tab-frame"><input type="radio" checked="" name="tier-tab" id="tier-tab1">
+                    <label for="tier-tab1">Tierlist</label>
+
+                    <div class="tier-tab">
+                        
+                        <hr>
+                        <div class="row mt-1 mb-3">
+                            <div class="col">
+                                <article class="skeleton-block">
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-2 col-5 text-center">
+                                            <div class="card skeleton-dimension-holder" style="border:0; width: 180px; height: 42px">
+                                                <div class="skeleton-loading image"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="d-block skeleton-loading-2 skeleton-loading text-block mb-3 mt-2 col-6"> &nbsp;</span>
+
+                                    <div class="row">
+                                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 px-2 mt-2">
+                                            <div class="card-body" style="padding: 0;border-radius: 10px;border: 1px solid #4a4550;">
+                                                <div class="shining-img">
+                                                    <div class="row">
+                                                        <div class="col-lg-3 col-4">
+                                                            <div class="card skeleton-dimension-holder" style="border:0; width: 59px; height: 59px">
+                                                                <div class="skeleton-loading image"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-9 col-8 d-flex align-items-center justify-content-center">
+                                                            <span class="d-block skeleton-loading-2 skeleton-loading text-block col-6"> &nbsp;</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 px-2 mt-2">
+                                            <div class="card-body" style="padding: 0;border-radius: 10px;border: 1px solid #4a4550;">
+                                                <div class="shining-img">
+                                                    <div class="row">
+                                                        <div class="col-lg-3 col-4">
+                                                            <div class="card skeleton-dimension-holder" style="border:0; width: 59px; height: 59px">
+                                                                <div class="skeleton-loading image"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-9 col-8 d-flex align-items-center justify-content-center">
+                                                            <span class="d-block skeleton-loading-2 skeleton-loading text-block col-6"> &nbsp;</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 px-2 mt-2">
+                                            <div class="card-body" style="padding: 0;border-radius: 10px;border: 1px solid #4a4550;">
+                                                <div class="shining-img">
+                                                    <div class="row">
+                                                        <div class="col-lg-3 col-4">
+                                                            <div class="card skeleton-dimension-holder" style="border:0; width: 59px; height: 59px">
+                                                                <div class="skeleton-loading image"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-9 col-8 d-flex align-items-center justify-content-center">
+                                                            <span class="d-block skeleton-loading-2 skeleton-loading text-block col-6"> &nbsp;</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- ============================2. Homepage skeleton here=====================================-->
+    <div class="container mt-4" style="border-top: white 1px solid;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>2. Homepage Component Skeleton</h1>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mb-5 pb-3">
+        <div class="row justify-content-center mr-0 ml-0">
+            <div class="col-sm-4 col-6 mb-4">
+                <div class="skeleton-block">
+                    <div class="card skeleton-dimension-holder shining-img zoom" style="border:0; height: 144px">
+                        <div class="skeleton-loading image"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-6 mb-4">
+                <div class="skeleton-block">
+                    <div class="card skeleton-dimension-holder shining-img zoom" style="border:0; height: 144px">
+                        <div class="skeleton-loading image"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-6 mb-4">
+                <div class="skeleton-block">
+                    <div class="card skeleton-dimension-holder shining-img zoom" style="border:0; height: 144px">
+                        <div class="skeleton-loading image"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-6 mb-4">
+                <div class="skeleton-block">
+                    <div class="card skeleton-dimension-holder shining-img zoom" style="border:0; height: 144px">
+                        <div class="skeleton-loading image"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-6 mb-4">
+                <div class="skeleton-block">
+                    <div class="card skeleton-dimension-holder shining-img zoom" style="border:0; height: 144px">
+                        <div class="skeleton-loading image"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ============================3. Menu Component skeleton here=====================================-->
+    <div class="container mt-4" style="border-top: white 1px solid;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>3. Menu Component Skeleton</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5 pb-3">
+
+        <div class="row pt-2 pb-3 mx-n2">
+            <div class="col">
+                <h1 style="font-size: 2.9vh;" itemprop="title">Menu for Master Duel</h1>
+            </div>
+        </div>
+
+        <div class="row mt-2 mb-4">
+            <div class="col-sm-4 col-6 px-2 mb-4">
+                <div class="card skeleton-block text-truncate">
+                    <div class="thumbnail shining-img zoom">
+                        <div class="card skeleton-dimension-holder" style="border:0; height: 189px">
+                            <div class="skeleton-loading image"></div>
+                        </div>
+                        <div class="caption" style="text-align:left;">
+                            <h2 class="skeleton-loading col-3 text-block m-3">&nbsp;</h2>
+                            <p class="skeleton-loading col-5 text-block mx-3 my-2">&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-6 px-2 mb-4">
+                <div class="card skeleton-block text-truncate">
+                    <div class="thumbnail shining-img zoom">
+                        <div class="card skeleton-dimension-holder" style="border:0; height: 189px">
+                            <div class="skeleton-loading image"></div>
+                        </div>
+                        <div class="caption" style="text-align:left;">
+                            <div class="row">
+                                <h2 class="skeleton-loading col-3 text-block m-3">&nbsp;</h2>
+                            </div>
+                            <div class="row">
+                                <p class="skeleton-loading col-5 text-block mx-3 my-2">&nbsp;</p>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-6 px-2 mb-4">
+                <div class="card skeleton-block text-truncate">
+                    <div class="thumbnail shining-img zoom">
+                        <div class="card skeleton-dimension-holder" style="border:0; height: 189px">
+                            <div class="skeleton-loading image"></div>
+                        </div>
+                        <div class="caption" style="text-align:left;">
+                            <h2 class="skeleton-loading col-3 text-block m-3">&nbsp;</h2>
+                            <p class="skeleton-loading col-5 text-block mx-3 my-2">&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-6 px-2 mb-4">
+                <div class="card skeleton-block text-truncate">
+                    <div class="thumbnail shining-img zoom">
+                        <div class="card skeleton-dimension-holder" style="border:0; height: 189px">
+                            <div class="skeleton-loading image"></div>
+                        </div>
+                        <div class="caption" style="text-align:left;">
+                            <h2 class="skeleton-loading col-3 text-block m-3">&nbsp;</h2>
+                            <p class="skeleton-loading col-5 text-block mx-3 my-2">&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-6 px-2 mb-4">
+                <div class="card skeleton-block text-truncate">
+                    <div class="thumbnail shining-img zoom">
+                        <div class="card skeleton-dimension-holder" style="border:0; height: 189px">
+                            <div class="skeleton-loading image"></div>
+                        </div>
+                        <div class="caption" style="text-align:left;">
+                            <h2 class="skeleton-loading col-3 text-block m-3">&nbsp;</h2>
+                            <p class="skeleton-loading col-5 text-block mx-3 my-2">&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-6 px-2 mb-4">
+                <div class="card skeleton-block text-truncate">
+                    <div class="thumbnail shining-img zoom">
+                        <div class="card skeleton-dimension-holder" style="border:0; height: 189px">
+                            <div class="skeleton-loading image"></div>
+                        </div>
+                        <div class="caption" style="text-align:left;">
+                            <h2 class="skeleton-loading col-3 text-block m-3">&nbsp;</h2>
+                            <p class="skeleton-loading col-5 text-block mx-3 my-2">&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <!-- ============================4. Guide Menu skeleton here=====================================-->
+    <div class="container mt-4" style="border-top: white 1px solid;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>4. Guide Menu Component Skeleton</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5 pb-3">
+
+        <div class="row pt-5 pb-4 mx-n2">
+            <div class="col">
+                <h1 style="font-size: 2.1vh;" itemprop="title">Latest guides for MASTER DUEL
+                </h1>
+            </div>
+        </div>
+        <div class="row mt-2 mb-4">
+            <div class="col-sm-6 col-12 px-2">
+                <article class="blog border-bottom pb-4 mb-5">
+                    <div class="card skeleton-block text-truncate">
+                        <div class="thumbnail shining-img zoom">
+                            <div class="card skeleton-dimension-holder" style="border:0; height: 190px">
+                                <div class="skeleton-loading image"></div>
+                            </div>
+                            <div class="caption" style="text-align:left;">
+                                <h2 class="skeleton-loading col-7 text-block m-3">&nbsp;</h2>
+                                <p class="skeleton-loading col-4 text-block mx-3 my-2">&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skeleton-padding" style="height: 17px"></div>
+                    <div class="row skeleton-block height-50">
+                        <p class="skeleton-loading col-md text-block mx-3 my-2">&nbsp;</p>
+                        <p class="skeleton-loading col-md text-block mx-3 my-2">&nbsp;</p>
+                        <p class="col-md-2 text-block mx-3 my-2"></p>
+                    </div>
+                    <div class="skeleton-padding" style="height: 22px"></div>
+                </article>
+            </div>
+            <div class="col-sm-6 col-12 px-2">
+                <article class="blog border-bottom pb-4 mb-5">
+                    <div class="card skeleton-block text-truncate">
+                        <div class="thumbnail shining-img zoom">
+                            <div class="card skeleton-dimension-holder" style="border:0; height: 190px">
+                                <div class="skeleton-loading image"></div>
+                            </div>
+                            <div class="caption" style="text-align:left;">
+                                <h2 class="skeleton-loading col-7 text-block m-3">&nbsp;</h2>
+                                <p class="skeleton-loading col-4 text-block mx-3 my-2">&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skeleton-padding" style="height: 17px"></div>
+                    <div class="row skeleton-block height-50">
+                        <p class="skeleton-loading col-md text-block mx-3 my-2">&nbsp;</p>
+                        <p class="skeleton-loading col-md text-block mx-3 my-2">&nbsp;</p>
+                        <p class="col-md-2 text-block mx-3 my-2"></p>
+                    </div>
+                    <div class="skeleton-padding" style="height: 22px"></div>
+                </article>
+            </div>
+            <div class="col-sm-6 col-12 px-2">
+                <article class="blog border-bottom pb-4 mb-5">
+                    <div class="card skeleton-block text-truncate">
+                        <div class="thumbnail shining-img zoom">
+                            <div class="card skeleton-dimension-holder" style="border:0; height: 190px">
+                                <div class="skeleton-loading image"></div>
+                            </div>
+                            <div class="caption" style="text-align:left;">
+                                <h2 class="skeleton-loading col-7 text-block m-3">&nbsp;</h2>
+                                <p class="skeleton-loading col-4 text-block mx-3 my-2">&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skeleton-padding" style="height: 17px"></div>
+                    <div class="row skeleton-block height-50">
+                        <p class="skeleton-loading col-md text-block mx-3 my-2">&nbsp;</p>
+                        <p class="skeleton-loading col-md text-block mx-3 my-2">&nbsp;</p>
+                        <p class="col-md-2 text-block mx-3 my-2"></p>
+                    </div>
+                    <div class="skeleton-padding" style="height: 22px"></div>
+                </article>
+            </div>
+            <div class="col-sm-6 col-12 px-2">
+                <article class="blog border-bottom pb-4 mb-5">
+                    <div class="card skeleton-block text-truncate">
+                        <div class="thumbnail shining-img zoom">
+                            <div class="card skeleton-dimension-holder" style="border:0; height: 190px">
+                                <div class="skeleton-loading image"></div>
+                            </div>
+                            <div class="caption" style="text-align:left;">
+                                <h2 class="skeleton-loading col-7 text-block m-3">&nbsp;</h2>
+                                <p class="skeleton-loading col-4 text-block mx-3 my-2">&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skeleton-padding" style="height: 17px"></div>
+                    <div class="row skeleton-block height-50">
+                        <p class="skeleton-loading col-md text-block mx-3 my-2">&nbsp;</p>
+                        <p class="skeleton-loading col-md text-block mx-3 my-2">&nbsp;</p>
+                        <p class="col-md-2 text-block mx-3 my-2"></p>
+                    </div>
+                    <div class="skeleton-padding" style="height: 22px"></div>
+                </article>
+            </div>
+            <div class="col-sm-6 col-12 px-2">
+                <article class="blog border-bottom pb-4 mb-5">
+                    <div class="card skeleton-block text-truncate">
+                        <div class="thumbnail shining-img zoom">
+                            <div class="card skeleton-dimension-holder" style="border:0; height: 190px">
+                                <div class="skeleton-loading image"></div>
+                            </div>
+                            <div class="caption" style="text-align:left;">
+                                <h2 class="skeleton-loading col-7 text-block m-3">&nbsp;</h2>
+                                <p class="skeleton-loading col-4 text-block mx-3 my-2">&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skeleton-padding" style="height: 17px"></div>
+                    <div class="row skeleton-block height-50">
+                        <p class="skeleton-loading col-md text-block mx-3 my-2">&nbsp;</p>
+                        <p class="skeleton-loading col-md text-block mx-3 my-2">&nbsp;</p>
+                        <p class="col-md-2 text-block mx-3 my-2"></p>
+                    </div>
+                    <div class="skeleton-padding" style="height: 22px"></div>
+                </article>
+            </div>
+            <div class="col-sm-6 col-12 px-2">
+                <article class="blog border-bottom pb-4 mb-5">
+                    <div class="card skeleton-block text-truncate">
+                        <div class="thumbnail shining-img zoom">
+                            <div class="card skeleton-dimension-holder" style="border:0; height: 190px">
+                                <div class="skeleton-loading image"></div>
+                            </div>
+                            <div class="caption" style="text-align:left;">
+                                <h2 class="skeleton-loading col-7 text-block m-3">&nbsp;</h2>
+                                <p class="skeleton-loading col-4 text-block mx-3 my-2">&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skeleton-padding" style="height: 17px"></div>
+                    <div class="row skeleton-block height-50">
+                        <p class="skeleton-loading col-md text-block mx-3 my-2">&nbsp;</p>
+                        <p class="skeleton-loading col-md text-block mx-3 my-2">&nbsp;</p>
+                        <p class="col-md-2 text-block mx-3 my-2"></p>
+                    </div>
+                    <div class="skeleton-padding" style="height: 22px"></div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ============================Blog Menu skeleton here=====================================-->
+    <div class="container mt-4" style="border-top: white 1px solid;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>5. Blog Menu Component Skeleton</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5 pb-3">
+        <div class="row pt-5 pb-4 mx-n2">
+            <div class="col">
+                <h1 style="font-size: 2.1vh;" itemprop="title">News &amp; Blogs</h1>
+            </div>
+        </div>
+        <div class="row mt-2 mb-4">
+            <div class="col-sm-6 col-12 px-2">
+                <article class="blog-list border-bottom pb-4 mb-5 skeleton-block">
+                    <div class="blog-start-column">
+                        <div class="d-flex align-items-center fs-sm pb-2 mb-1">
+                            
+                                <div class="blog-entry-author-ava skeleton-dimension-holder">
+                                    <div class="skeleton-loading image"></div>
+                                </div>
+                                <p class="skeleton-loading col-8 text-block mx-1 my-2">&nbsp;</p>
+                            
+                        </div>
+                        <p class="skeleton-loading col-md-7 text-block my-2">&nbsp;</p>
+                        <h2 class="skeleton-loading col text-block my-3">&nbsp;</h2>
+                    </div>
+                    <div class="blog-end-column">
+                        <div class="skeleton-dimension-holder mb-3" style="width: 100%; height:115px">
+                            <div class="skeleton-loading image zoom"></div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between mb-1">
+                            <p class="skeleton-loading col-md-4 col-7 text-block my-2">&nbsp;</p>
+                        </div>
+                        <p class="fs-sm skeleton-loading col-md-8 col-10 text-block"></p>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-6 col-12 px-2">
+                <article class="blog-list border-bottom pb-4 mb-5 skeleton-block">
+                    <div class="blog-start-column">
+                        <div class="d-flex align-items-center fs-sm pb-2 mb-1">
+                            
+                                <div class="blog-entry-author-ava skeleton-dimension-holder">
+                                    <div class="skeleton-loading image"></div>
+                                </div>
+                                <p class="skeleton-loading col-8 text-block mx-1 my-2">&nbsp;</p>
+                            
+                        </div>
+                        <p class="skeleton-loading col-md-7 text-block my-2">&nbsp;</p>
+                        <h2 class="skeleton-loading col text-block my-3">&nbsp;</h2>
+                    </div>
+                    <div class="blog-end-column">
+                        <div class="skeleton-dimension-holder mb-3" style="width: 100%; height:115px">
+                            <div class="skeleton-loading image zoom"></div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between mb-1">
+                            <p class="skeleton-loading col-md-4 col-7 text-block my-2">&nbsp;</p>
+                        </div>
+                        <p class="fs-sm skeleton-loading col-md-8 col-10 text-block"></p>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-6 col-12 px-2">
+                <article class="blog-list border-bottom pb-4 mb-5 skeleton-block">
+                    <div class="blog-start-column">
+                        <div class="d-flex align-items-center fs-sm pb-2 mb-1">
+                            
+                                <div class="blog-entry-author-ava skeleton-dimension-holder">
+                                    <div class="skeleton-loading image"></div>
+                                </div>
+                                <p class="skeleton-loading col-8 text-block mx-1 my-2">&nbsp;</p>
+                            
+                        </div>
+                        <p class="skeleton-loading col-md-7 text-block my-2">&nbsp;</p>
+                        <h2 class="skeleton-loading col text-block my-3">&nbsp;</h2>
+                    </div>
+                    <div class="blog-end-column">
+                        <div class="skeleton-dimension-holder mb-3" style="width: 100%; height:115px">
+                            <div class="skeleton-loading image zoom"></div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between mb-1">
+                            <p class="skeleton-loading col-md-4 col-7 text-block my-2">&nbsp;</p>
+                        </div>
+                        <p class="fs-sm skeleton-loading col-md-8 col-10 text-block"></p>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-6 col-12 px-2">
+                <article class="blog-list border-bottom pb-4 mb-5 skeleton-block">
+                    <div class="blog-start-column">
+                        <div class="d-flex align-items-center fs-sm pb-2 mb-1">
+                            
+                                <div class="blog-entry-author-ava skeleton-dimension-holder">
+                                    <div class="skeleton-loading image"></div>
+                                </div>
+                                <p class="skeleton-loading col-8 text-block mx-1 my-2">&nbsp;</p>
+                            
+                        </div>
+                        <p class="skeleton-loading col-md-7 text-block my-2">&nbsp;</p>
+                        <h2 class="skeleton-loading col text-block my-3">&nbsp;</h2>
+                    </div>
+                    <div class="blog-end-column">
+                        <div class="skeleton-dimension-holder mb-3" style="width: 100%; height:115px">
+                            <div class="skeleton-loading image zoom"></div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between mb-1">
+                            <p class="skeleton-loading col-md-4 col-7 text-block my-2">&nbsp;</p>
+                        </div>
+                        <p class="fs-sm skeleton-loading col-md-8 col-10 text-block"></p>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-6 col-12 px-2">
+                <article class="blog-list border-bottom pb-4 mb-5 skeleton-block">
+                    <div class="blog-start-column">
+                        <div class="d-flex align-items-center fs-sm pb-2 mb-1">
+                            
+                                <div class="blog-entry-author-ava skeleton-dimension-holder">
+                                    <div class="skeleton-loading image"></div>
+                                </div>
+                                <p class="skeleton-loading col-8 text-block mx-1 my-2">&nbsp;</p>
+                            
+                        </div>
+                        <p class="skeleton-loading col-md-7 text-block my-2">&nbsp;</p>
+                        <h2 class="skeleton-loading col text-block my-3">&nbsp;</h2>
+                    </div>
+                    <div class="blog-end-column">
+                        <div class="skeleton-dimension-holder mb-3" style="width: 100%; height:115px">
+                            <div class="skeleton-loading image zoom"></div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between mb-1">
+                            <p class="skeleton-loading col-md-4 col-7 text-block my-2">&nbsp;</p>
+                        </div>
+                        <p class="fs-sm skeleton-loading col-md-8 col-10 text-block"></p>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-6 col-12 px-2">
+                <article class="blog-list border-bottom pb-4 mb-5 skeleton-block">
+                    <div class="blog-start-column">
+                        <div class="d-flex align-items-center fs-sm pb-2 mb-1">
+                            
+                                <div class="blog-entry-author-ava skeleton-dimension-holder">
+                                    <div class="skeleton-loading image"></div>
+                                </div>
+                                <p class="skeleton-loading col-8 text-block mx-1 my-2">&nbsp;</p>
+                            
+                        </div>
+                        <p class="skeleton-loading col-md-7 text-block my-2">&nbsp;</p>
+                        <h2 class="skeleton-loading col text-block my-3">&nbsp;</h2>
+                    </div>
+                    <div class="blog-end-column">
+                        <div class="skeleton-dimension-holder mb-3" style="width: 100%; height:115px">
+                            <div class="skeleton-loading image zoom"></div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between mb-1">
+                            <p class="skeleton-loading col-md-4 col-7 text-block my-2">&nbsp;</p>
+                        </div>
+                        <p class="fs-sm skeleton-loading col-md-8 col-10 text-block"></p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================6. Blog skeleton here=====================================-->
+    <div class="container mt-4" style="border-top: white 1px solid;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>6. Blog Component Skeleton</h1>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="container mb-5 pb-3 skeleton-block">
+        <div class="bg-secondary py-4 ">
+            <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+                <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb col d-flex justify-content-center justify-content-lg-start">
+
+                            <li class="breadcrumb-item text-nowrap">
+                                <p class="skeleton-loading text-block d-block m-1 px-4 mx-3">&nbsp;</p>
+                            </li>
+                            <li class="breadcrumb-item text-nowrap">
+                                <p class="skeleton-loading text-block d-block m-1 px-4 mx-3">&nbsp;</p>
+                            </li><li class="breadcrumb-item text-nowrap">
+                                <p class="skeleton-loading text-block d-block m-1 px-4 mx-3">&nbsp;</p>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="order-lg-1 col d-flex justify-content-center justify-content-lg-start" itemscope="">
+                    <h1 class="skeleton-loading col-7 text-block my-3">&nbsp;</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container pb-5">
+            <div class="row pt-5 mt-md-2">
+                <section class="col-lg-8">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center pb-4 mt-n1">
+                        <div class="d-flex align-items-center fs-sm pb-2 mb-1">
+                            
+                            <div class="blog-entry-author-ava skeleton-dimension-holder">
+                                <div class="skeleton-loading image"></div>
+                            </div>
+                            <p class="skeleton-loading text-block px-5 mx-1 my-2">&nbsp;</p>
+                            <span class="blog-entry-meta-divider"></span>
+                            <p class="skeleton-loading text-block px-5 mx-1 my-2">&nbsp;</p>
+                        
+                        </div>
+                            
+                    </div>
+
+                    <div class="gallery row pb-2">
+                        <div class="skeleton-dimension-holder mb-3" style="width: 100%; height:250px">
+                            <div class="skeleton-loading image"></div>
+                        </div>
+                    </div>
+
+                    
+                    <div></div>
+
+                    <div> <!-- Start article-->
+                        <p class="skeleton-loading text-block col-8 mx-1 my-2">&nbsp;</p>
+                        <h4 class="skeleton-loading text-block col-8 mx-1 my-4">&nbsp;</h4>
+                        <!-- <div class="skeleton-dimension-holder mb-3 col-md-6 col" style="height:100vh; max-height: 600px;">
+                            <div class="skeleton-loading image"></div>
+                        </div> -->
+                        <div class="skeleton-padding" style="height: 80vh; max-height: 300px;"></div>
+
+                        <p class="skeleton-loading text-block col col-md-7 mx-1 my-2">&nbsp;</p>
+                        <p class="skeleton-loading text-block col col-md-10 mx-1 my-2">&nbsp;</p>
+                        
+                    </div> <!-- End article-->
+                    
+                    <!-- comments-->
+                    <div class="pt-2 mt-5">
+                        <h4 class="skeleton-loading text-block col-6 col-md-3">&nbsp;</h4>
+                        
+                        <div class="row mb-5">
+                            <div class="col flex-grow-0">
+                                <div class="skeleton-dimension-holder" style="width:50px;height:50px;">
+                                    <div class="skeleton-loading image rounded-circle"></div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="skeleton-dimension-holder" style="height:50px;">
+                                <div class="skeleton-loading image rounded"></div>
+                            </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="row mb-5">
+                            <div class="col flex-grow-0">
+                                <div class="skeleton-dimension-holder" style="width:50px;height:50px;">
+                                    <div class="skeleton-loading image rounded-circle"></div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="skeleton-dimension-holder" style="height:120px;">
+                                <div class="skeleton-loading image rounded"></div>
+                            </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="row">
+                            <div class="col flex-grow-0">
+                                <div class="skeleton-dimension-holder" style="width:50px;height:50px;">
+                                    <div class="skeleton-loading image rounded-circle"></div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="skeleton-dimension-holder" style="height:30px;">
+                                <div class="skeleton-loading image rounded"></div>
+                            </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </section>
+                <aside class="col-lg-4">
+                    <div class="offcanvas offcanvas-collapse offcanvas-end border-start ms-lg-auto" id="blog-sidebar" style="max-width: 22rem;">
+                        <div class="offcanvas-header align-items-center shadow-sm">
+                            <h2 class="h5 mb-0">Thanh công cụ</h2>
+                            <button class="btn-close ms-auto" style="color: white;background-color: white;" type="button" onclick="closeBlogHandheld()"></button>
+                        </div>
+                        <div class="offcanvas-body py-grid-gutter py-lg-1 px-lg-4">
+                            <div class="widget widget-links mb-grid-gutter pb-grid-gutter border-bottom mx-lg-2">
+                                
+                                <h3 class="widget-title">Tìm kiếm bài viết</h3>
+                                
+                                <form>
+                                    <div class="input-group d-none d-lg-flex flex-nowrap mx-4" style="width:100%;left:-10%;"><i class="ci-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                                        <input class="form-control rounded-start w-100" type="text" placeholder="Tìm kiếm bài viết..">
+                                        <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+                                    </div>
+                                    <div class="input-group d-lg-none my-3"><i class="ci-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                                        <input class="form-control rounded-start" type="text" placeholder="Tìm kiếm bài viết..">
+                                        <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="widget widget-links mb-grid-gutter pb-grid-gutter border-bottom mx-lg-2">
+                                
+                                <h3 class="widget-title">Chủ đề</h3>
+                                <ul class="widget-list">
+                                    <li class="widget-list-item"><a class="widget-list-link d-flex justify-content-between align-items-center" href="/blog/category/tin-mi"><span>Tin mới</span>
+                                            <span class="fs-xs text-muted ms-3">672</span></a></li>
+                                    <li class="widget-list-item"><a class="widget-list-link d-flex justify-content-between align-items-center" href="/blog/category/cp-nht-ban-list"><span>Cập nhật Ban
+                                                List</span>
+                                            <span class="fs-xs text-muted ms-3">40</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="widget mb-grid-gutter pb-grid-gutter border-bottom mx-lg-2">
+                                <h3 class="widget-title">Các bài đọc khác</h3>
+                                <div class="d-flex align-items-center mb-3"><a class="flex-shrink-0" href="/post/details/989/master-duel-cac-cap-nhat-trong-shop-ngay-11-thang-07"><img class="rounded" src="https://ygovietnamcdn.azureedge.net/storage/BlogPost/master-duel-cac-cap-nhat-trong-shop-ngay-11-thang-0707-11-2024-09-04-51.webp" width="64" alt="Master Duel: Các cập nhật trong Shop ngày 11 tháng 07" loading="lazy"></a>
+                                    <div class="ps-3">
+                                        <h6 class="blog-entry-title fs-sm mb-0"><a href="/post/details/989/master-duel-cac-cap-nhat-trong-shop-ngay-11-thang-07">Master
+                                                Duel: Các cập nhật trong Shop ngày 11 tháng 07</a></h6><span class="fs-ms text-muted">by <a class="blog-entry-meta-link">Trường
+                                                Trần Minh</a></span>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-3"><a class="flex-shrink-0" href="/post/details/981/ocg-rota-azamina-sinful-spoils"><img class="rounded" src="https://ygovietnamcdn.azureedge.net/storage/BlogPost/ocg-rota-azamina-sinful-spoils07-08-2024-19-02-28.png" width="64" alt="OCG: ROTA - Azamina &amp; Sinful Spoils" loading="lazy"></a>
+                                    <div class="ps-3">
+                                        <h6 class="blog-entry-title fs-sm mb-0"><a href="/post/details/981/ocg-rota-azamina-sinful-spoils">OCG:
+                                                ROTA - Azamina &amp; Sinful Spoils</a></h6><span class="fs-ms text-muted">by <a class="blog-entry-meta-link">Trường
+                                                Trần Minh</a></span>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-3"><a class="flex-shrink-0" href="/post/details/986/ocg-rota-mulcharmy-fuwaross"><img class="rounded" src="https://ygovietnamcdn.azureedge.net/storage/BlogPost/ocg-rota-mulcharmy-fuwaross07-11-2024-08-22-44.png" width="64" alt="OCG: ROTA - Mulcharmy Fuwaross" loading="lazy"></a>
+                                    <div class="ps-3">
+                                        <h6 class="blog-entry-title fs-sm mb-0"><a href="/post/details/986/ocg-rota-mulcharmy-fuwaross">OCG: ROTA -
+                                                Mulcharmy Fuwaross</a></h6><span class="fs-ms text-muted">by <a class="blog-entry-meta-link">Trường Trần Minh</a></span>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-3"><a class="flex-shrink-0" href="/post/details/977/ocg-rota-sangen-fuuro"><img class="rounded" src="https://ygovietnamcdn.azureedge.net/storage/BlogPost/ocg-rota-sangen-fuuro07-03-2024-15-13-44.png" width="64" alt=" OCG: ROTA - Sangen Fuuro" loading="lazy"></a>
+                                    <div class="ps-3">
+                                        <h6 class="blog-entry-title fs-sm mb-0"><a href="/post/details/977/ocg-rota-sangen-fuuro"> OCG: ROTA -
+                                                Sangen Fuuro</a></h6><span class="fs-ms text-muted">by <a class="blog-entry-meta-link">Trường Trần Minh</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget pb-grid-gutter mx-lg-2">
+                                <h3 class="widget-title">Các tag liên quan</h3><a class="btn-tag me-2 mb-2">#TCG</a><a class="btn-tag me-2 mb-2">#OCG</a><a class="btn-tag me-2 mb-2">#Master Duel</a><a class="btn-tag me-2 mb-2">#Goat</a><a class="btn-tag me-2 mb-2">#Test</a><a class="btn-tag me-2 mb-2">#Duel Links</a>
+                            </div>
+                            <div class="widget pb-grid-gutter mx-lg-2 d-block d-md-none"><button class="btn btn-primary btn-block" type="button" onclick="closeBlogHandheld()">Đóng</button></div>
+
+                            <div class="widget pb-grid-gutter mx-lg-2">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ============================Deck Component skeleton here=====================================-->
+    <div class="container mt-4" style="border-top: white 1px solid;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Deck Component Skeleton</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================Guide Component skeleton here=====================================-->
+    <div class="container mt-4" style="border-top: white 1px solid;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Guide Component Skeleton</h1>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!-- ============================End=====================================-->
+    <div class="container mt-5 mb-5 pt-5 pb-5">
+        <div class="row mt-5 mb-5 pt-5 pb-5 justify-content-center">
+            <div class="col-12">
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="css/animate.min.css?v=4.1.1" integrity="" />
+
+
+</body>
+
+</html>
