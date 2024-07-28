@@ -79,6 +79,13 @@
     background-color: #2F4B66;
 }
 
+.skeleton-block .archetype {
+    background-color: #b2bfe5d9;
+    padding: 0;
+    border-radius: 10px;
+    border: 1px solid #4a4550;
+}
+
 @keyframes skeleton-animation {
     0% {
         opacity: 0.4;
