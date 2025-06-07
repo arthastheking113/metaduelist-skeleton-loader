@@ -1,3 +1,4 @@
+/* If you want to edit any thing. Please update it in css\simulator.scss file. css\simulator.css will be overwrite when building */
 .game-board {
     display: inline-block;
 }
@@ -45,14 +46,14 @@
     justify-content: center;
     align-items: flex-start;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 80px;
 }
 
     .play-board-container .play-board {
         max-width: calc(100% - 20px);
     }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
     .play-board-container .play-board-side {
         order: 9;
         max-width: 290px;
@@ -88,7 +89,7 @@
     border: 1px solid #efefef;
     border-radius: 4px;
     padding: 10px;
-    padding-bottom: 25px;
+    padding-bottom: 65px;
     font-size: 11px;
     color: #efefef;
     overflow: hidden;
@@ -100,17 +101,54 @@
         max-width: 350px;
     }
 
-.play-board-container .log-message-container .card-key {
-    color: #b4b4ed;
+.play-board-container .log-message-container {
+    position: relative;
 }
 
-.play-board-container .log-message-container .new-state {
-    color: #f7a5a5;
-}
+    .play-board-container .log-message-container .card-key {
+        color: #b4b4ed;
+    }
 
-.play-board-container .log-message-container .log-card-name {
-    color: red;
-}
+    .play-board-container .log-message-container .new-state {
+        color: #f7a5a5;
+    }
+
+    .play-board-container .log-message-container .log-card-name {
+        color: red;
+    }
+
+    .play-board-container .log-message-container .log-message-fotter {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+        .play-board-container .log-message-container .log-message-fotter .input {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .play-board-container .log-message-container .log-message-fotter .chat-input {
+            display: block;
+            border: 1px solid rgba(255, 255, 255, 0.35) !important;
+            background: transparent;
+            line-height: 1em;
+            padding: 12px;
+            width: 100%;
+        }
+
+        .play-board-container .log-message-container .log-message-fotter .chat-btn {
+            height: 100%;
+            aspect-ratio: 1/1;
+            top: 0;
+            right: 0;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+        }
 
 .play-board-container .log-message-header {
     display: flex;
@@ -180,60 +218,239 @@
         visibility: hidden;
     }
 
-    #playtest .card-slot-row .holder-slot {
-        width: 102px;
-        display: block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        position: relative;
-        text-align: center;
+    #playtest .card-slot-row .phase-slot {
+        border: none;
     }
 
-        #playtest .card-slot-row .holder-slot .simulator-card {
+        #playtest .card-slot-row .phase-slot .text-phase {
+            display: none;
+        }
+
+        #playtest .card-slot-row .phase-slot .phase-icon {
             display: block;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-        }
-
-        #playtest .card-slot-row .holder-slot .description,
-        #playtest .card-slot-row .holder-slot .collection-count {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            min-width: 30px;
+            max-width: 60px;
+            width: calc(50% - 10px);
+            aspect-ratio: 1/1;
+            border-radius: 100%;
+            background-color: #b4b4ed;
+            border: 1px solid #b4b4ed;
+            float: left;
+            margin: 5px;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
-            font-weight: 600;
-            font-size: 30px;
-            z-index: 3;
         }
 
-        #playtest .card-slot-row .holder-slot .description {
-            z-index: 1;
-            font-size: x-small;
+            #playtest .card-slot-row .phase-slot .phase-icon ~ .phase-icon {
+                float: right;
+            }
+
+            #playtest .card-slot-row .phase-slot .phase-icon.current-phase {
+                background-color: #fff;
+            }
+
+        #playtest .card-slot-row .phase-slot .phase-btn {
+            display: block;
+            min-width: 35px;
+            max-width: 60px;
+            aspect-ratio: 1/1;
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            opacity: 0.6;
         }
 
-        #playtest .card-slot-row .holder-slot.desk {
-            height: 200px;
+@media (min-width: 768px) {
+    #playtest .card-slot-row .phase-slot .phase-btn {
+        float: left;
+    }
+
+        #playtest .card-slot-row .phase-slot .phase-btn ~ .phase-btn {
+            float: right;
+        }
+}
+
+#playtest .card-slot-row .phase-slot .phase-btn.current-phase {
+    border: 2px solid #fff !important;
+    color: #b4b4ed !important;
+    opacity: 1;
+}
+
+#playtest .card-slot-row .phase-slot .phase-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    white-space: pre-wrap;
+}
+
+.holder-slot {
+    width: 102px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+    text-align: center;
+    aspect-ratio: 1/1;
+}
+
+    .holder-slot .simulator-card {
+        display: block;
+        width: 100%;
+        height: 100%;
+        z-index: 2 !important;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        /* background-color: #001528; */
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.085);
+        border-radius: 0.4375rem;
+    }
+
+    .holder-slot .description,
+    .holder-slot .collection-count {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-weight: 600;
+        font-size: 30px;
+        z-index: 3;
+    }
+
+    .holder-slot .description {
+        z-index: 1;
+        font-size: x-small;
+    }
+
+    .holder-slot.desk {
+        height: 200px;
+    }
+
+    .holder-slot.card-slot.overlay-highlight, .holder-slot.card-slot.highlight {
+        background-image: linear-gradient(90deg, silver 50%, transparent 50%), linear-gradient(90deg, silver 50%, transparent 50%), linear-gradient(0deg, silver 50%, transparent 50%), linear-gradient(0deg, silver 50%, transparent 50%);
+        background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+        background-size: 15px 2px, 15px 2px, 2px 15px, 2px 15px;
+        background-position: left top, right bottom, left bottom, right top;
+        animation: border-dance 0.4s infinite linear;
+    }
+
+    .holder-slot.waiting-overlay, .holder-slot.waiting-overlay .simulator-card {
+        cursor: url("/asset/icon/pointer_overlay.png"), auto;
+    }
+
+    .holder-slot.overlay-slot .simulator-card {
+        position: absolute;
+        top: 0;
+        left: 0px;
+        transition: 0.2s ease;
+    }
+
+        .holder-slot.overlay-slot .simulator-card + .simulator-card {
+            left: -14px;
         }
 
-        #playtest .card-slot-row .holder-slot.card-slot.highlight {
-            background-image: linear-gradient(90deg, silver 50%, transparent 50%), linear-gradient(90deg, silver 50%, transparent 50%), linear-gradient(0deg, silver 50%, transparent 50%), linear-gradient(0deg, silver 50%, transparent 50%);
-            background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
-            background-size: 15px 2px, 15px 2px, 2px 15px, 2px 15px;
-            background-position: left top, right bottom, left bottom, right top;
-            animation: border-dance 0.4s infinite linear;
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(2) {
+            left: -4px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(3) {
+            left: 2px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(4) {
+            left: 6px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(5) {
+            left: 8px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(6) {
+            left: 8px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(7) {
+            left: 6px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(8) {
+            left: 2px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(9) {
+            left: -4px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(10) {
+            left: -12px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(11) {
+            left: -22px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(12) {
+            left: -34px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(13) {
+            left: -48px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(14) {
+            left: -64px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(15) {
+            left: -82px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(16) {
+            left: -102px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(17) {
+            left: -124px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(18) {
+            left: -148px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(19) {
+            left: -174px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card:nth-last-child(20) {
+            left: -202px;
+        }
+
+        .holder-slot.overlay-slot .simulator-card.defense {
+            left: 0;
+        }
+
+        .holder-slot.overlay-slot .simulator-card.overlap:hover {
+            margin-top: -15px;
         }
 
 @media (max-width: 767px) {
-    #playtest .card-slot-row .holder-slot .collection-count {
+    .holder-slot .collection-count {
         font-size: 16px;
     }
 
-    #playtest .card-slot-row .holder-slot.card-slot.highlight {
+    .holder-slot.card-slot.highlight {
         animation: none;
     }
 }
@@ -244,16 +461,6 @@
     height: 102px;
     background-color: transparent;
     perspective: 1000px;
-
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    /* background-color: #001528; */
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.085);
-    border-radius: 0.4375rem;
     /* Animation */
     /* END Animation */
 }
@@ -367,13 +574,13 @@
     gap: 10px;
 }
 
-#playtest .actions {
-    text-align: center;
+#playtest .actions .tools,
+#playtest .actions .action-btns {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 10px;
 }
-
-    #playtest .actions .input {
-        margin: 1rem;
-    }
 
 body .ui-dialog .menu-dialog {
     padding: 0;
@@ -437,7 +644,7 @@ body {
     background-color: rgba(0, 0, 22, 0.5058823529);
 }
 
-    .play-board .lightbox-container .card-lightbox-inner {
+    .play-board .lightbox-container .lightbox-inner {
         position: relative;
         width: 100%;
         height: 100%;
@@ -446,7 +653,7 @@ body {
         align-items: center;
     }
 
-        .play-board .lightbox-container .card-lightbox-inner .image-cont {
+        .play-board .lightbox-container .lightbox-inner .image-cont {
             width: 80%;
             height: 80%;
             display: flex;
@@ -454,15 +661,45 @@ body {
             align-items: center;
         }
 
-            .play-board .lightbox-container .card-lightbox-inner .image-cont img {
+            .play-board .lightbox-container .lightbox-inner .image-cont img {
                 width: auto;
                 max-height: 100%;
             }
+
+        .play-board .lightbox-container .lightbox-inner .phase-lightbox-text {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+@media (min-width: 768px) {
+    .play-board .lightbox-container .lightbox-inner .phase-lightbox-text {
+        font-size: 4rem;
+    }
+}
+
+.play-board .lightbox-container .lightbox-inner .skill-lightbox-text {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+    .play-board .lightbox-container .lightbox-inner .skill-lightbox-text {
+        font-size: 2.5rem;
+    }
+}
+
+.play-board .lightbox-container .lightbox-inner .skill-lightbox-text .skill-name {
+    color: deepskyblue;
+}
 
 .move-container {
     position: absolute;
     transition: 0.2s ease-in-out;
 }
+
+    .move-container .holder-slot {
+        border-color: transparent;
+    }
 
 .lcard-informations {
     width: 240px;
@@ -615,11 +852,17 @@ body {
     }
 }
 
-.water-mark p {
+.simulator-water-mark p {
     position: absolute;
     bottom: -10px; /* or whatever */
     right: 8px; /* or whatever, position according to taste */
     opacity: 0.5; /* Firefox, Chrome, Safari, Opera, IE >= 9 (preview) */
     filter: alpha(opacity=50); /* for <= IE 8 */
     font-size: small;
+}
+
+:root {
+    --animate-duration: 0.5s;
+    --animate-delay: 0.5s;
+    --animate-repeat: 1;
 }
