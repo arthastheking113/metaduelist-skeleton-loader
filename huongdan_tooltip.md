@@ -20,7 +20,7 @@ vào tooltip
 
                                                                         
         <div class="tooltiptext-special-card tooltip--bottom" id="card-view-tool-tip-946c0a6a-5064-4843-8b59-8b32e5af9493">
-            <div class="tooltip-caret"></div>
+            <div class="tooltip-caret"></div>. <!-- THÊM DÒNG NÀY -->
             <div class="row">
                 
             </div>
@@ -34,108 +34,155 @@ vào tooltip
 ```js
         function onCardViewEvent(e) {
             if (!e || !e.id) return;
-        
+          
             const currentId = e.id;
             const cardId = currentId.replace("card-view-", "");
             const cardEl = document.getElementById(currentId);
             const tooltip = document.getElementById(`card-view-tool-tip-${cardId}`);
             const topNav = document.getElementById("top-nav");
-            position = 'top';
-        
+            const thumbEl = cardEl?.querySelector('.thumbnail');
+            let position = 'top';
+          
             if (!cardEl || !tooltip) return;
-        
-            // Reset tooltip để đo đạc chính xác
+          
             tooltip.style.visibility = "hidden";
             tooltip.style.opacity = "0";
             tooltip.style.top = "unset";
             tooltip.style.bottom = "unset";
             tooltip.style.left = "unset";
             tooltip.style.right = "unset";
-        
+          
             const spacing = 8;
             const cardRect = cardEl.getBoundingClientRect();
             const tooltipWidth = tooltip.offsetWidth;
             const tooltipHeight = tooltip.offsetHeight;
             const topNavBottom = topNav ? topNav.getBoundingClientRect().bottom : 0;
-        
-            // Các vị trí để thử
-            const belowTop = cardRect.height + spacing + 26;
-            const aboveTop = -tooltipHeight - spacing + 0;
-        
-            // Vị trí trái để căn giữa
-            let centerLeft = (cardRect.width - tooltipWidth) / 2;
-        
-            // Tính vị trí tuyệt đối của tooltip nếu đặt giữa
-            let absoluteLeft = cardRect.left + centerLeft;
-        
-            // Điều chỉnh nếu tooltip tràn trái hoặc phải khỏi màn hình
-            if (absoluteLeft < 0) {
-                centerLeft -= absoluteLeft; // đẩy sang phải để không tràn trái
-            } else if (absoluteLeft + tooltipWidth > window.innerWidth) {
-                const overflowRight = absoluteLeft + tooltipWidth - window.innerWidth;
-                centerLeft -= overflowRight; // đẩy sang trái để không tràn phải
+            const spaceTop = thumbEl ? parseInt(window.getComputedStyle(thumbEl).marginTop) : 0;
+            let header = document.querySelector('header .navbar-sticky'); 
+            let headerHeight = header ? header.offsetHeight : 0;
+          
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            const cardCenterX = cardRect.left + cardRect.width / 2;
+            const cardCenterY = cardRect.top + cardRect.height / 2;
+          
+            const isLeft = cardCenterX < centerX;
+            const isRight = cardCenterX >= centerX;
+            const isTop = cardCenterY < centerY;
+            const isBottom = cardCenterY >= centerY;
+          
+            const candidates = [];
+          
+            const tryBottom = () => {
+              const top = cardRect.bottom + spacing;
+              if (top + tooltipHeight <= window.innerHeight) {
+                const left = Math.max(0, Math.min(
+                  cardRect.left + (cardRect.width - tooltipWidth) / 2,
+                  window.innerWidth - tooltipWidth
+                ));
+                candidates.push({ pos: 'bottom', top, left });
+              }
+            };
+          
+            const tryTop = () => {
+              const top = cardRect.top - spacing - tooltipHeight;
+              if (top >= topNavBottom) {
+                const left = Math.max(0, Math.min(
+                  cardRect.left + (cardRect.width - tooltipWidth) / 2,
+                  window.innerWidth - tooltipWidth
+                ));
+                candidates.push({ pos: 'top', top, left });
+              }
+            };
+          
+            const tryRight = () => {
+              const left = cardRect.right + spacing;
+              if (left + tooltipWidth <= window.innerWidth) {
+                const top = Math.max(headerHeight, Math.min(
+                  cardRect.top + (cardRect.height - tooltipHeight) / 2,
+                  window.innerHeight - tooltipHeight
+                ));
+                candidates.push({ pos: 'right', top, left });
+              }
+            };
+          
+            const tryLeft = () => {
+              const left = cardRect.left - spacing - tooltipWidth;
+              if (left >= 0) {
+                const top = Math.max(headerHeight, Math.min(
+                  cardRect.top + (cardRect.height - tooltipHeight) / 2,
+                  window.innerHeight - tooltipHeight
+                ));
+                candidates.push({ pos: 'left', top, left });
+              }
+            };
+          
+            if (isLeft) {
+              tryRight(); tryBottom(); tryTop(); tryLeft();
+            } else if (isRight) {
+              tryLeft(); tryBottom(); tryTop(); tryRight();
+            } else if (isTop) {
+              tryBottom(); tryRight(); tryLeft(); tryTop();
+            } else {
+              tryTop(); tryRight(); tryLeft(); tryBottom();
             }
-        
-            const canShowBelow = (cardRect.bottom + spacing + tooltipHeight <= window.innerHeight);
-            const canShowAbove = (cardRect.top - spacing - tooltipHeight >= topNavBottom);
-        
+          
             let positioned = false;
-        
-            // 1. Hiển thị bên dưới nếu đủ
-            if (canShowBelow) {
-                tooltip.style.top = `${belowTop}px`;
-                tooltip.style.left = `${centerLeft}px`;
-                positioned = true;
-                position = 'bottom';
-            }
-            // 2. Nếu không, thử hiển thị bên trên
-            else if (canShowAbove) {
-                tooltip.style.top = `${aboveTop}px`;
-                tooltip.style.left = `${centerLeft}px`;
-                positioned = true;
-                position = 'top';
-            }
-            // 3. Không đủ trên/dưới → sang phải
-            else {
-                const rightSpace = window.innerWidth - cardRect.right - spacing;
-                const leftSpace = cardRect.left - spacing;
-                const verticalCenter = (cardRect.height - tooltipHeight) / 2;
-        
-                if (rightSpace >= tooltipWidth) {
-                    tooltip.style.left = `${cardRect.width + spacing}px`;
-                    tooltip.style.top = `${verticalCenter}px`;
-                    positioned = true;
-                    position = 'right';
+            if (candidates.length > 0) {
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
 
-                } else if (leftSpace >= tooltipWidth) {
-                    tooltip.style.right = `${cardRect.width + spacing}px`;
-                    tooltip.style.top = `${verticalCenter}px`;
-                    positioned = true;
-                    position = 'left';
-                }
+            // Tìm candidate có khoảng cách đến tâm màn hình nhỏ nhất
+            const best = candidates.reduce((a, b) => {
+                const aCenterX = a.left + tooltipWidth / 2;
+                const aCenterY = a.top + tooltipHeight / 2;
+                const bCenterX = b.left + tooltipWidth / 2;
+                const bCenterY = b.top + tooltipHeight / 2;
 
+                const aDist = Math.hypot(centerX - aCenterX, centerY - aCenterY);
+                const bDist = Math.hypot(centerX - bCenterX, centerY - bCenterY);
+
+                return aDist < bDist ? a : b;
+            });
+
+            tooltip.style.top = `${best.top}px`;
+            tooltip.style.left = `${best.left}px`;
+            position = best.pos;
+            positioned = true;
             }
-        
-            // Nếu không định vị được, fallback đặt dưới lệch trái
+          
             if (!positioned) {
-                tooltip.style.top = `${belowTop}px`;
-                tooltip.style.left = `0px`;
-                position = 'bottom';
+              tooltip.style.top = `${cardRect.bottom + spacing}px`;
+              tooltip.style.left = `0px`;
+              position = 'bottom';
             }
-
+          
             tooltip.classList.remove("tooltip--top", "tooltip--bottom", "tooltip--left", "tooltip--right");
-            // Thêm class tương ứng
-            if (position === "bottom") {
-                tooltip.classList.add("tooltip--bottom");
-            } else if (position === "top") {
-                tooltip.classList.add("tooltip--top");
-            } else if (position === "right") {
-                tooltip.classList.add("tooltip--right");
-            } else if (position === "left") {
-                tooltip.classList.add("tooltip--left");
+            tooltip.classList.add(`tooltip--${position}`);
+          
+            const caret = tooltip.querySelector('.tooltip-caret');
+            if (caret) {
+              caret.style.left = '';
+              caret.style.top = '';
+              caret.style.transform = '';
+          
+              if (position === 'top' || position === 'bottom') {
+                const cardCenter = cardRect.left + cardRect.width / 2;
+                const tooltipLeft = parseFloat(tooltip.style.left);
+                const caretOffset = cardCenter - tooltipLeft;
+                const safeOffset = Math.max(12, Math.min(caretOffset, tooltip.offsetWidth - 12));
+                caret.style.left = `${safeOffset}px`;
+                caret.style.transform = 'translateX(-50%)';
+              } else if (position === 'left' || position === 'right') {
+                const cardCenter = cardRect.top + cardRect.height / 2;
+                const tooltipTop = parseFloat(tooltip.style.top);
+                const caretOffset = cardCenter - tooltipTop;
+                const safeOffset = Math.max(12, Math.min(caretOffset, tooltip.offsetHeight - 12));
+                caret.style.top = `${safeOffset}px`;
+                caret.style.transform = 'translateY(-50%)';
+              }
             }
-        
-            // Hiển thị tooltip
+          
             tooltip.style.visibility = "visible";
             tooltip.style.opacity = "1";
         }
@@ -148,4 +195,13 @@ vào tooltip
     theme.css
     theme.min.css
 
+```
+
+Thêm CSS
+```css
+.tooltip-special .tooltiptext-special-card {   /* Có sẵn */
+border: 2px solid #1c3662;                   /* Có sẵn */
+border-radius: 2px;                            /* Có sẵn */
+    position: fixed;                           /* THÊM MỚI */
+}
 ```
