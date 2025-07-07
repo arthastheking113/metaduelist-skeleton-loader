@@ -5647,7 +5647,7 @@ fieldset:disabled .btn {
 }
 
 .page-item.active .page-link {
-    /* z-index: 3; */
+    z-index: 3;
     color: #fff;
     background-color: #fe696a;
     border-color: transparent;
@@ -18724,7 +18724,7 @@ a.nav-link:hover .media-tab-media {
 
 .page-item.active {
     position: relative;
-    /* z-index: 5; */
+    z-index: 5;
     cursor: default;
 }
 
