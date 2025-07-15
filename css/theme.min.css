@@ -21425,7 +21425,7 @@ input[type=file] {
     z-index: 9999;
     bottom: 110%;
     left: 33%;
-    /* margin-left: -60px; */
+    margin-left: -60px;
     opacity: 0;
     transition: opacity .3s
 }
